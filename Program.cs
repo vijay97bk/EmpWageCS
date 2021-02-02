@@ -1,18 +1,18 @@
 ﻿using System;
 
-namespace EmpWage
-{
     class Program
     {
-        public const int IS_FULL_TIME = 2;
-        public const int IS_PART_TIME = 1;
-        public const int EMP_RATE_PER_HOUR = 20;
+    public const int IS_FULL_TIME = 2;
+    public const int IS_PART_TIME = 1;
+    public const int EMP_RATE_PER_HOUR = 20;
+    public const int NUMBER_OF_WORKING_DAYS = 20;
 
         static void Main(string[] args)
         {
           
             int empHours = 0;
             int empWage = 0;
+        int totalEmpWage = 0;
 
             Random random = new Random();
             int Emp_Check = random.Next(0, 3);
@@ -28,10 +28,12 @@ namespace EmpWage
                     empHours = 0;
                     break;
             }
-            empWage = (empHours * EMP_RATE_PER_HOUR);
-            Console.WriteLine("employee wage is" + empWage);
+        empWage = empHours * EMP_RATE_PER_HOUR;
+        totalEmpWage += empWage;
+        Console.WriteLine("employee wage is" + empWage);
+        Console.WriteLine("total wage is" + totalEmpWage);
         }
-
+    
     }
 
-}
+
